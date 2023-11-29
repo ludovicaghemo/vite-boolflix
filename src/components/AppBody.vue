@@ -17,7 +17,7 @@ export default {
     <div class="container pt-4">
         <div class="row">
             <div class="col" v-for="movie in store.moviesList">
-                <AppCard :movie="movie"/>
+                <AppCard :movie="movie" />
             </div>
         </div>
     </div>
