@@ -33,11 +33,12 @@ export default {
         <img v-else src="https://www.tea-tron.com/antorodriguez/blog/wp-content/uploads/2016/04/Image-Not-Found1.png" alt=""
             class="poster">
         <div class="card-text">
-            <h3 class="pb-2">{{ moviesObj.title ? moviesObj.title : moviesObj.name }}</h3>
-            <h4 class="pb-2"> {{ moviesObj.original_title ? moviesObj.original_title : moviesObj.original_name }}</h4>
+            <h4 class="pb-2">{{ moviesObj.title ? moviesObj.title : moviesObj.name }}</h4>
+            <h5 class="pb-2"> {{ moviesObj.original_title ? moviesObj.original_title : moviesObj.original_name }}</h5>
             <img class="flag pb-2" :src="getImagePath(moviesObj.original_language)" alt=""
                 v-if="langFlag.includes(moviesObj.original_language)">
             <p v-else class="pb-2"> {{ moviesObj.original_language }}</p>
+            <p class="overview"><strong>Overview:</strong> {{ moviesObj.overview }}</p>
             <p class="pb-2"> <i v-for="star in maxRate" :class="star <= getRoundedRatingUp() ? 'fa-solid' : 'fa-regular'"
                     class="fa-star"></i></p>
         </div>
@@ -50,27 +51,32 @@ export default {
 .custom-card {
     border: 1px solid white;
     border-radius: 10px;
-    width: 252px;
-    height: 252px;
+    width: 352px;
+    height: 352px;
     position: relative;
     background-color: black;
 
     .poster {
-        height: 250px;
-        width: 250px;
+        height: 350px;
+        width: 350px;
         display: block;
         border-radius: 10px;
     }
 
     .card-text {
         display: none;
-        height: 250px;
-        width: 250px;
+        height: 350px;
+        width: 350px;
         color: white;
         text-align: center;
         position: absolute;
         top: 40px;
-        bottom: 40px;
+        left: 0;
+        font-size: .7rem;
+
+        .overview {
+            font-size: .5rem;
+        }
     }
 
     .flag {
