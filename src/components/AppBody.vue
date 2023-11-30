@@ -14,25 +14,27 @@ export default {
 </script>
 
 <template>
-    <div class="container pt-4">
-        <!-- Movies Section -->
-        <section>
-            <h2>Movies</h2>
-            <div class="row">
-                <div class="col" v-for="movie in store.moviesList">
-                    <AppCard :moviesObj="movie" :imgUrl="store.baseImgUrl" />
+    <div class="wrapper">
+        <div class="container pt-4">
+            <!-- Movies Section -->
+            <section>
+                <h2 class="text-center">Movies</h2>
+                <div class="row">
+                    <div class="col my-5 mx-2" v-for="movie in store.moviesList">
+                        <AppCard :moviesObj="movie" :imgUrl="store.baseImgUrl" />
+                    </div>
                 </div>
-            </div>
-        </section>
-        <!-- Tv Series Section -->
-        <section class="pt-3">
-            <h2>Tv Series</h2>
-            <div class="row">
-                <div class="col-5" v-for="serie in store.tvSeriesList">
-                    <AppCard :moviesObj="serie" :imgUrl="store.baseImgUrl" />
+            </section>
+            <!-- Tv Series Section -->
+            <section class="pt-3">
+                <h2 class="text-center">Tv Series</h2>
+                <div class="row">
+                    <div class="col my-5 mx-2" v-for="serie in store.tvSeriesList">
+                        <AppCard :moviesObj="serie" :imgUrl="store.baseImgUrl" />
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 </template>
 

@@ -28,23 +28,63 @@ export default {
 </script>
 
 <template>
-    <div class="card mb-2">
+    <div class="custom-card">
         <img v-if="moviesObj.poster_path" class="poster" :src="`${imgUrl}${moviesObj.poster_path}`" alt="">
-        <img v-else src="https://www.tea-tron.com/antorodriguez/blog/wp-content/uploads/2016/04/Image-Not-Found1.png" alt="">
-        <h4>{{ moviesObj.title ? moviesObj.title : moviesObj.name }}</h4>
-        <h5> {{ moviesObj.original_title ? moviesObj.original_title : moviesObj.original_name }}</h5>
-        <img class="flag" :src="getImagePath(moviesObj.original_language)" alt=""
-            v-if="langFlag.includes(moviesObj.original_language)">
-        <p v-else> {{ moviesObj.original_language }}</p>
-        <p> <i v-for="star in maxRate" :class="star <= getRoundedRatingUp() ? 'fa-solid' : 'fa-regular'"
-                class="fa-star"></i></p>
+        <img v-else src="https://www.tea-tron.com/antorodriguez/blog/wp-content/uploads/2016/04/Image-Not-Found1.png" alt=""
+            class="poster">
+        <div class="card-text">
+            <h3 class="pb-2">{{ moviesObj.title ? moviesObj.title : moviesObj.name }}</h3>
+            <h4 class="pb-2"> {{ moviesObj.original_title ? moviesObj.original_title : moviesObj.original_name }}</h4>
+            <img class="flag pb-2" :src="getImagePath(moviesObj.original_language)" alt=""
+                v-if="langFlag.includes(moviesObj.original_language)">
+            <p v-else class="pb-2"> {{ moviesObj.original_language }}</p>
+            <p class="pb-2"> <i v-for="star in maxRate" :class="star <= getRoundedRatingUp() ? 'fa-solid' : 'fa-regular'"
+                    class="fa-star"></i></p>
+        </div>
     </div>
 </template>
 
 <style scoped lang="scss">
 @use "../style/general.scss";
 
-.flag {
-    width: 30px;
+.custom-card {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 252px;
+    height: 252px;
+    position: relative;
+    background-color: black;
+
+    .poster {
+        height: 250px;
+        width: 250px;
+        display: block;
+        border-radius: 10px;
+    }
+
+    .card-text {
+        display: none;
+        height: 250px;
+        width: 250px;
+        color: white;
+        text-align: center;
+        position: absolute;
+        top: 40px;
+        bottom: 40px;
+    }
+
+    .flag {
+        width: 20px;
+    }
+
+    &:hover {
+        .poster {
+            display: none;
+        }
+
+        .card-text {
+            display: block;
+        }
+    }
 }
 </style>

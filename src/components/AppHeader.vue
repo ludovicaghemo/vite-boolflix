@@ -11,15 +11,13 @@ export default {
 </script>
 
 <template>
-    <header>
-        <div class="container d-flex h-100 justify-content-between align-items-center">
+    <header class="d-flex justify-content-around align-items-center">
             <h1>BOOLFLIX</h1>
             <div class="search-section">
                 <input type="text" name="" id="" class="me-2" placeholder="inizia la ricerca"
                     v-model.trim="store.searchText">
                 <button @click="$emit('get-search')">CERCA</button>
             </div>
-        </div>
     </header>
 </template>
 
@@ -27,11 +25,10 @@ export default {
 @use "../style/general.scss";
 
 header {
-    height: 100px;
-    .container {
+    height: 10vh;
+    background-color: black;
         h1 {
             color: red;
         }
     }
-}
 </style>
