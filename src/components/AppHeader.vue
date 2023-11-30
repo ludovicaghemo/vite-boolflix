@@ -12,12 +12,12 @@ export default {
 
 <template>
     <header class="d-flex justify-content-around align-items-center">
-            <h1>BOOLFLIX</h1>
-            <div class="search-section">
-                <input type="text" name="" id="" class="me-2" placeholder="inizia la ricerca"
-                    v-model.trim="store.searchText">
-                <button @click="$emit('get-search')">CERCA</button>
-            </div>
+        <h1>BOOLFLIX</h1>
+        <!-- Search section -->
+        <div class="search-section">
+            <input type="text" name="" id="" class="me-2" placeholder="inizia la ricerca" v-model.trim="store.searchText">
+            <button @click="$emit('get-search')">CERCA</button>
+        </div>
     </header>
 </template>
 
@@ -27,8 +27,9 @@ export default {
 header {
     height: 10vh;
     background-color: black;
-        h1 {
-            color: red;
-        }
+
+    h1 {
+        color: red;
     }
+}
 </style>
