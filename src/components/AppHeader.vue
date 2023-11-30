@@ -28,11 +28,10 @@ export default {
 
 header {
     height: 100px;
-}
-
-.container {
-    h1 {
-        color: red;
+    .container {
+        h1 {
+            color: red;
+        }
     }
 }
 </style>

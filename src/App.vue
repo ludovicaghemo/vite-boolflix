@@ -27,7 +27,7 @@ export default {
         })
         .then((resp) => {
           //console.log(resp);
-          this.store.moviesList = resp.data.results
+          this.store.moviesList = resp.data.results;
         })
     }
   },
