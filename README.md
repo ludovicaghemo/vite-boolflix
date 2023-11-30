@@ -33,6 +33,8 @@ permetterci di stampare a schermo un numero di stelle piene che vanno da 1 a 5,
 lasciando le restanti vuote (troviamo le icone in FontAwesome).
 Arrotondiamo sempre per eccesso all’unità successiva, non gestiamo icone mezze
 piene 
+stella piena: <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+stella vuota: <i class="fa-regular fa-star" style="color: #ffffff;"></i>
 
 **Milestone 4:**
 Trasformiamo quello che abbiamo fatto fino ad ora in una vera e propria webapp,

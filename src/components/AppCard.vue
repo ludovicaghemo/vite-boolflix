@@ -18,6 +18,9 @@ export default {
         getImagePath(img) {
             //console.log(img);
             return new URL(`../assets/img/${img}.png`, import.meta.url).href;
+        },
+        getRoundedRatingUp() {
+            return Math.ceil(this.moviesObj.vote_average) / 2;
         }
     }
 }
@@ -31,7 +34,7 @@ export default {
         <img class="flag" :src="getImagePath(moviesObj.original_language)" alt=""
             v-if="langFlag.includes(moviesObj.original_language)">
         <p v-else> {{ moviesObj.original_language }}</p>
-        <p> {{ moviesObj.vote_average }}</p>
+        <p> {{ getRoundedRatingUp() }}</p>
     </div>
 </template>
 
