@@ -7,7 +7,8 @@ export default {
                 'es',
                 'it',
                 'de'
-            ]
+            ],
+            maxRate: 5
         }
     },
     props: {
@@ -34,7 +35,8 @@ export default {
         <img class="flag" :src="getImagePath(moviesObj.original_language)" alt=""
             v-if="langFlag.includes(moviesObj.original_language)">
         <p v-else> {{ moviesObj.original_language }}</p>
-        <p> {{ getRoundedRatingUp() }}</p>
+        <p> <i v-for="star in maxRate" :class="star <= getRoundedRatingUp() ? 'fa-solid' : 'fa-regular'"
+                class="fa-star"></i></p>
     </div>
 </template>
 

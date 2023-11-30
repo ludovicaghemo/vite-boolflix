@@ -24,17 +24,15 @@ nazione ritornata dall’API (le flag non ci sono in FontAwesome).
 dovremo prendere sia i film che corrispondono alla query, sia le serie tv, stando
 attenti ad avere alla fine dei valori simili.
 
-- [] **Milestone 3:**
+- [x] **Milestone 3:**
 - [x] In questa milestone come prima cosa aggiungiamo la copertina del film o della serie
 al nostro elenco.
 
-- [] Trasformiamo poi il voto da 1 a 10 decimale in un numero intero da 1 a 5, così da
+- [x] Trasformiamo poi il voto da 1 a 10 decimale in un numero intero da 1 a 5, così da
 permetterci di stampare a schermo un numero di stelle piene che vanno da 1 a 5,
 lasciando le restanti vuote (troviamo le icone in FontAwesome).
 Arrotondiamo sempre per eccesso all’unità successiva, non gestiamo icone mezze
 piene 
-stella piena: <i class="fa-solid fa-star" style="color: #ffffff;"></i>
-stella vuota: <i class="fa-regular fa-star" style="color: #ffffff;"></i>
 
 **Milestone 4:**
 Trasformiamo quello che abbiamo fatto fino ad ora in una vera e propria webapp,
