@@ -1,6 +1,6 @@
 <script>
-import AppBody from "./components/AppBody.vue";
 import AppHeader from "./components/AppHeader.vue";
+import AppBody from "./components/AppBody.vue";
 import { store } from "./store.js";
 import axios from "axios";
 
@@ -18,6 +18,7 @@ export default {
   },
   methods: {
     handleBtn() {
+      //Movies Call
       axios
         .get(this.store.apiUrl + this.store.movieSearch, {
           params: {
@@ -28,8 +29,20 @@ export default {
         .then((resp) => {
           //console.log(resp);
           this.store.moviesList = resp.data.results;
+        });
+      // Tv Series Call
+      axios
+        .get(this.store.apiUrl + this.store.tvSeriesSearch, {
+          params: {
+            query: this.store.searchText,
+            api_key: this.store.apiKey
+          }
         })
-    }
+        .then((resp) => {
+          // console.log(resp);
+          this.store.tvSeriesList = resp.data.results;
+        })
+    },
   },
 };
 </script>

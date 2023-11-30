@@ -11,7 +11,7 @@ export default {
         }
     },
     props: {
-        movie: Object,
+        moviesObj: Object,
     },
     methods: {
         getImagePath(img) {
@@ -24,11 +24,11 @@ export default {
 
 <template>
     <div class="card mb-2">
-        <h4>{{ movie.title }}</h4>
-        <p> {{ movie.original_title }}</p>
-        <img :src="getImagePath(movie.original_language)" alt="" v-if="langFlag.includes(movie.original_language)">
-        <p v-else> {{ movie.original_language }}</p>
-        <p> {{ movie.vote_average }}</p>
+        <h4>{{ moviesObj.title ? moviesObj.title : moviesObj.name }}</h4>
+        <h5> {{ moviesObj.original_title ? moviesObj.original_title : moviesObj.original_name }}</h5>
+        <img :src="getImagePath(moviesObj.original_language)" alt="" v-if="langFlag.includes(moviesObj.original_language)">
+        <p v-else> {{ moviesObj.original_language }}</p>
+        <p> {{ moviesObj.vote_average }}</p>
     </div>
 </template>
 
