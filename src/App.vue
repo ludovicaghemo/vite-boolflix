@@ -1,5 +1,5 @@
 <script>
-import AppHeader from "./components/AppHeader.vue";
+import AppHeader from "./components/AppHeader.vue"
 import AppBody from "./components/AppBody.vue";
 import { store } from "./store.js";
 import axios from "axios";
