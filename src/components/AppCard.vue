@@ -29,7 +29,8 @@ export default {
 
 <template>
     <div class="card mb-2">
-        <img class="poster" :src="`${imgUrl}${moviesObj.poster_path}`" alt="">
+        <img v-if="moviesObj.poster_path" class="poster" :src="`${imgUrl}${moviesObj.poster_path}`" alt="">
+        <img v-else src="https://www.tea-tron.com/antorodriguez/blog/wp-content/uploads/2016/04/Image-Not-Found1.png" alt="">
         <h4>{{ moviesObj.title ? moviesObj.title : moviesObj.name }}</h4>
         <h5> {{ moviesObj.original_title ? moviesObj.original_title : moviesObj.original_name }}</h5>
         <img class="flag" :src="getImagePath(moviesObj.original_language)" alt=""

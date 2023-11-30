@@ -28,7 +28,7 @@ export default {
         <section class="pt-3">
             <h2>Tv Series</h2>
             <div class="row">
-                <div class="col" v-for="serie in store.tvSeriesList">
+                <div class="col-5" v-for="serie in store.tvSeriesList">
                     <AppCard :moviesObj="serie" :imgUrl="store.baseImgUrl" />
                 </div>
             </div>
