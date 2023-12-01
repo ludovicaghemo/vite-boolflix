@@ -23,7 +23,7 @@ export default {
         },
         // Grade from 1 to 10 decimal transformed into an integer from 1 to 5 - rounded up
         getRoundedRatingUp() {
-            return Math.ceil(this.moviesObj.vote_average) / 2;
+            return Math.ceil(this.moviesObj.vote_average / 2);
         }
     }
 }
@@ -31,7 +31,7 @@ export default {
 
 <template>
     <div class="custom-card">
-        <!-- Poster imgs -->
+        <!-- Poster imgs - truthy value-->
         <img v-if="moviesObj.poster_path" class="poster" :src="`${imgUrl}${moviesObj.poster_path}`" alt="">
         <img v-else src="https://www.tea-tron.com/antorodriguez/blog/wp-content/uploads/2016/04/Image-Not-Found1.png" alt=""
             class="poster">
@@ -47,7 +47,7 @@ export default {
             <!-- Overview -->
             <p class="overview"><strong>Overview:</strong> {{ moviesObj.overview }}</p>
             <!-- Ratings - stars -->
-            <p class="pb-2"> <i v-for="star in maxRate" :class="star <= getRoundedRatingUp() ? 'fa-solid' : 'fa-regular'"
+            <p class="pb-2"> <i v-for="star in maxRate" :key="star" :class="star <= getRoundedRatingUp() ? 'fa-solid' : 'fa-regular'"
                     class="fa-star"></i></p>
         </div>
     </div>

@@ -34,7 +34,7 @@ lasciando le restanti vuote (troviamo le icone in FontAwesome).
 Arrotondiamo sempre per eccesso all’unità successiva, non gestiamo icone mezze
 piene 
 
-- [] **Milestone 4:**
+- [x] **Milestone 4:**
 Trasformiamo quello che abbiamo fatto fino ad ora in una vera e propria webapp,
 creando un layout completo simil-Netflix:
 - [x] Un header che contiene logo e search bar;

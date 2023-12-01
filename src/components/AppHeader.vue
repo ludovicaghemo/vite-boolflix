@@ -27,6 +27,11 @@ export default {
 header {
     height: 10vh;
     background-color: black;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     h1 {
         color: red;
